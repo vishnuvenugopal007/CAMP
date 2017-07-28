@@ -42,7 +42,6 @@ router.post("/", isLoggedIn, function(req, res){
 });
 
 //Comment Edit
-
 router.get('/:comment_id/edit', function(req, res){
     Comment.findById(req.params.comment_id, function(err, foundComment){
         if(err){
@@ -56,6 +55,18 @@ router.get('/:comment_id/edit', function(req, res){
 //Comment Update
 router.put('/:comment_id', function(req, res){
     Comment.findByIdAndUpdate(req.params.comment_id, req.body.comment, function(err, updatedComment){
+        if(err){
+            res.redirect('back');
+        } else {
+            res.redirect('/campgrounds/' + req.params.id);
+        }
+    });
+});
+
+//Comment Destroy
+router.delete('/:comment_id', function(req, res){
+    //findByIdAndRemove
+    Comment.findByIdAndRemove(req.params.comment_id, function(err){
         if(err){
             res.redirect('back');
         } else {
