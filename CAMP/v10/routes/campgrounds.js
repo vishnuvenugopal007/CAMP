@@ -87,6 +87,14 @@ router.delete('/:id', checkCampgroundOwnership, function(req, res){
     });
 });
 
+//middleware
+function isLoggedIn(req, res, next){
+    if(req.isAuthenticated()){
+        return next();
+    }
+    res.redirect('/login');
+}
+
 function checkCampgroundOwnership(req, res, next){
     //is the user logged in?
         if(req.isAuthenticated()){
@@ -108,14 +116,6 @@ function checkCampgroundOwnership(req, res, next){
         
         // otherwise redirect
     //if not redirect
-}
-
-//middleware
-function isLoggedIn(req, res, next){
-    if(req.isAuthenticated()){
-        return next();
-    }
-    res.redirect('/login');
 }
 
 module.exports = router;
