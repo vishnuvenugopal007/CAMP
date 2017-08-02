@@ -16,8 +16,8 @@ var commentRoutes = require('./routes/comments'),
     campgroundRoutes = require('./routes/campgrounds'),
     indexRoutes = require('./routes/index')
     
-var url = process.env.DATABASEURL || "mongodb://localhost/CAMP_v12";
-mongoose.connect('mongodb://localhost/CAMP_v12');
+var url = process.env.DATABASEURL || "mongodb://localhost/CAMP_v13";
+mongoose.connect('mongodb://localhost/CAMP_v13');
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set('view engine', 'ejs');
