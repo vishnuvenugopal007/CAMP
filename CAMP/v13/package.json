@@ -3,8 +3,14 @@
   "version": "1.0.0",
   "description": "camp",
   "main": "app.js",
+  "engines": {
+    "node": "8.2.1",
+    "npm": "5.3.0"
+  }
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "watch": "nodemon app.js"
   },
   "repository": {
     "type": "git",
