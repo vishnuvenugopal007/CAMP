@@ -15,11 +15,12 @@ var seedDB = require('./seeds');
 var commentRoutes = require('./routes/comments'),
     campgroundRoutes = require('./routes/campgrounds'),
     indexRoutes = require('./routes/index')
-    
+
+console.log(process.env.DATABASEURL);    
 // var url = process.env.DATABASEURL || "mongodb://localhost/CAMP_v13";
 // mongoose.connect('mongodb://localhost/CAMP_v13');
 var url = process.env.DATABASEURL || "mongodb://vishnu:childish7@ds161001.mlab.com:61001/vcamp"
-mongoose.connect('mongodb://vishnu:childish7@ds161001.mlab.com:61001/vcamp');
+mongoose.connect('mongodb://vishnu:childish7@ds161001.mlab.com:61001/vcamp', {useMongoClient: true});
 //mongodb://vishnu:childish7@ds161001.mlab.com:61001/vcamp
 
 app.use(bodyParser.urlencoded({extended: true}));
