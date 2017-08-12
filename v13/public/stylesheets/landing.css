@@ -4,6 +4,7 @@ body {
 
 #landing-header-bar {
   z-index: 2;
+  position: relative;
 }
 
 #landing-header {
